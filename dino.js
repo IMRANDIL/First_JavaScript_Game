@@ -2,7 +2,7 @@ import { incrementCustomProp, getCustomProp, setCustomProp } from "./updataProp.
 
 const dinoElem = document.querySelector('[data-dino]')
 
-const JUMP_SPEED = .35;
+const JUMP_SPEED = .37;
 
 const GRAVITY = .001;
 
@@ -27,10 +27,28 @@ export function setupDino() {
 }
 
 
+
+export function setDinoLose() {
+    dinoElem.src = 'imgs/dino-lose.png'
+}
+
+
+
+
+
+
+
 export function updateDino(delta, speedScale) {
     handleRun(delta, speedScale);
     handleJump(delta)
 }
+
+
+export function getDinoPos() {
+    return dinoElem.getBoundingClientRect()
+}
+
+
 
 
 
